@@ -14,20 +14,25 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Prata&display=swap"
         rel="stylesheet">
     <!--  -->
-    <title>Samaara CV</title>
+    <title>Samara CV</title>
     <!--  -->
     <style>
         /* MARLIN OVERRIDES */
         :root {
-            --primary: #1b1b1b;
-            --text: #1b1b1b;
-            --secondary: #969696;
+            --primary: #1c1c1c;
+            --text: #1c1c1c;
+            --secondary: #d3abb4;
+            --tertiary: #b06879;
+            --quaternary: #969696;
             --font-display: 'DM Sans', sans-serif;
             --font-body: 'DM Sans', sans-serif;
             --factor-type-h1: 0.42;
             --factor-type-h3: 0.26;
+            --factor-type-a: 0.26;
             --master-h2-size: var(--master-body-1-size);
             --master-h2-line-height: var(--master-body-2-line-height);
+            --master-a-size: var(--master-body-1-size);
+            --master-a-line-height: var(--master-body-2-line-height);
         }
 
         /* UNIQUE VARIABLES */
@@ -48,8 +53,23 @@
         }
 
         h3 {
-            color: var(--secondary);
+            color: var(--quaternary);
             font-weight: 560;
+        }
+
+        a {
+            color: var(--secondary);
+        }
+
+        /* mouse over link */
+
+        a:link {
+            color: var(--secondary);
+        }
+
+        a:hover {
+            color: var(--tertiary);
+            cursor: pointer;
         }
 
         /*  */
@@ -70,7 +90,7 @@
         /* PRINT */
         @page {
             size: A4;
-            margin: 8mm;
+            margin: 12mm;
         }
 
         /* SPACING TOKENS */
@@ -104,7 +124,7 @@
                 font-size: calc(var(--sc-1)* 0.72) !important;
                 font-weight: 560 !important;
                 line-height: var(--sc-1) !important;
-                color: #A1A1A1;
+                color: var(--quaternary);
             }
 
             h4 {
@@ -116,6 +136,12 @@
                 font-size: var(--sc-1) !important;
                 font-weight: 400 !important;
                 line-height: calc(var(--sp-2) * 1.08) !important;
+            }
+
+            a {
+                font-size: calc(var(--sc-1)* 0.72) !important;
+                font-weight: 560 !important;
+                line-height: var(--sc-1) !important;
             }
 
             button {
@@ -139,17 +165,12 @@
 
         /* RAIL | CONTACT */
 
-        #railContact h2 {
+        #railContact a {
             grid-column: span var(--cols-C);
         }
 
         #railContact>* {
             margin-bottom: var(--sc-1);
-        }
-
-
-        #railContact .email {
-            font-weight: 600;
         }
 
         #railContact .social {
@@ -201,10 +222,12 @@
         }
 
         #sectionTechnical .body,
-        #sectionCareer .body {
+        #sectionCareer .body,
+        #sectionEducation .body {
             border-top: none;
             padding-top: 0;
         }
+
 
         /* FRAGMENT */
         .fragment {
@@ -232,6 +255,19 @@
         .segment>* {
             padding-bottom: var(--sp-0);
         }
+
+        /* EDUCATION */
+        .segment {
+            grid-column: span var(--cols-I);
+            padding-top: var(--sc-1);
+            padding-right: var(--sc-1);
+            padding-bottom: var(--sc-1);
+        }
+
+        .segment>* {
+            padding-bottom: var(--sp-0);
+        }
+
 
         /* RESPONSIVE */
 
@@ -267,15 +303,15 @@
         <!-- TITLE -->
         <header>
             <h1>Samara Leung</h1>
+            <a class="website" href="https://www.samaraleung.com/">www.samaraleung.com</a>
         </header>
         <!-- RAIL | CONTACT -->
         <div id="railContact" class="grid-12">
-            <h2 class="email">+61 412 969 570</h2>
-            <h2><a href="mailto:samara@maravisuals.com?subject = Contact&body = Message">
-                    samara@maravisuals.com</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a
-                    href="https://www.samaraleung.com/">www.samaraleung.com</a></h2>
+            <a class="mobile" href="tel:+61412969570">+61 412 969 570</a>
+            <a class="email" href="mailto:samara@maravisuals.com?subject = Contact&body = Message">
+                samara@maravisuals.com</a>
             <div class="social">
-                <h2>Brisbane 4060</h2>
+                <a href="https://goo.gl/maps/JEw3okqr5y8kW8oU9">Brisbane 4060</a>
             </div>
         </div>
 
@@ -286,7 +322,7 @@
             </div>
 
             <div class="body">
-                <p>A senior creative and newly graduated UX/UI designer that values human-centred design. I love
+                <p>I'm a newly graduated UX/UI designer and senior creative that values human-centred design. I love
                     exploring and understanding human experiences, challenges and thought processes to build projects
                     that intuitively enhance people's digital experiences.
                 </p>
@@ -425,7 +461,7 @@
         </section>
 
         <!-- SECTION | EDUCATION -->
-        <section id="sectionCareer">
+        <section id="sectionEducation">
             <div class="label">
                 <h2>Education</h2>
             </div>
@@ -433,14 +469,13 @@
             <div class="body">
                 <!-- SEGMENTS -->
                 <div class="segment">
-                    <h2><a href="https://www.credly.com/badges/af6704b7-fe7c-4606-a391-1d8bdaec20d1/public_url">UI/UX
-                            Bootcamp</a></h2>
-                    <h3><a href="https://www.credly.com/badges/af6704b7-fe7c-4606-a391-1d8bdaec20d1/public_url">2021 /
-                            Monash University in partnership with Trilogy Education Services</a></h3>
+                    <h2>UI/UX Bootcamp</h2>
+                    <a href="https://www.credly.com/badges/af6704b7-fe7c-4606-a391-1d8bdaec20d1/public_url">2021 /
+                        Monash University in partnership with Trilogy Education Services</a>
                 </div>
                 <div class="segment">
                     <h2>Diploma in Digital Media Design</h2>
-                    <h3>2016 / Billy Blue College of Design</h3>
+                    <a href="https://www.billyblue.edu.au/">2016 / Billy Blue College of Design</a>
                 </div>
             </div>
         </section>
